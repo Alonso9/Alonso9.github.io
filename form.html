@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con estilo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main" >
+        <!-- seccion de datos personales -->
+        <section class="personal_info" >
+            <div class="contenedor">
+                <div class="form">
+                    <h1>Informacion Personal</h1>
+                    <label ><span>*</span> Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" class="requerido" required><br><br>
+                    <label ><span>*</span> Contraseña:</label>
+                    <input type="password" name="passwd" id="passwd" class="requerido" required><br><br>
+                    <label ><span>*</span> Confirmar contraseña:</label>
+                    <input type="password" name="conpasswd" id="conpasswd" class="requerido" required><br><br>
+                    <label ><span>*</span> Correo:</label>
+                    <input type="email" name="email" id="email" required><br><br>
+                    <label ><span>*</span> Fecha de inicio:</label>
+                    <input type="date" name="fd" id="fd"><br>
+                    <label ><span>*</span> Fecha de salida:</label>
+                    <input type="date" name="fs" id="fs"><br><br><br>
+                </div>
+            </div>
+        </section>
+        <!-- Seccion de numero de huespedes -->
+        <section class="huespedes">
+            <div class="contenedor">
+                <div class="formh" >
+                    <h1>Numero de huespedes</h1><br>
+                    <p >Por favor indique el numero de huespedes a solicitar la habitacion</p><br><br>
+                    <label>Numero de huespedes:</label>
+                    <input type="number">
+                </div>
+            </div>
+        </section>
+        <!-- seccion de servicios disponibles en la habitacion -->
+        <section class="servicios_ha">
+            <div class="contenedor">
+                <div class="formservicios_ha" >
+                    <h1>Servicios disponibles en la habitación</h1><br>
+                    <p>Para esto seleccione las casillas de los servicios a solicitar!!!</p>
+                    <table>
+                    <tr>
+                        <td>
+                        <label><input type="checkbox" id="cbox1" >Aire acondicionado</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="cbox2"> <label for="cbox2">Caja fuerte</label>
+                        </td>
+                        <td>
+                            <label><input type="checkbox" id="cbox3" >Mini bar</label>
+                        </td>
+                        <td>
+                            <label><input type="checkbox" id="cbox4" >Conexion a internet</label>
+                        </td>
+                        <td>
+                            <label><input type="checkbox" id="cbox5" >Almohadas</label>
+                        </td>
+                        <td>
+                            <label><input type="checkbox" id="cbox6" >Sky</label>
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- Seccion de tipo de habitacion -->
+        <section class="tipo_ha">
+            <div class="contenedor">
+                <div class="formtipo_ha">
+                    <h1>Tipo de habitación</h1><br>
+                    <p>Selecione el tipo de habitación a desear</p><br>
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="radio" id="individual" name="individual">
+                                <label>individual</label>
+                            </td>
+                            <td>
+                                <input type="radio" id="dual" name="doble">
+                                <label>Doble</label>
+                            </td>
+                            <td>
+                                <input type="radio" id="suite" name="suite">
+                                <label>Suite</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- seccion de tipo de pensión -->
+        <section>
+            <div class="contenedor">
+                <div class="form_pension">
+                    <h1>Tipo de pensión</h1><br>
+                    <p>Selecione el tipo de pensión qeu desea</p><br>
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="radio" id="alojamiento" name="alojamiento">
+                                <label>Alojamiento</label>
+                            </td>
+                            <td>
+                                <input type="radio" id="desayuno" name="desayuno">
+                                <label>Desayuno</label>
+                            </td>
+                            <td>
+                                <input type="radio" id="media" name="media">
+                                <label>media</label>
+                            </td>
+                            <td>
+                                <input type="radio" id="completa" name="completa">
+                                <label>Completa</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section><!-- seccion de comentarios -->
+        <section>
+            <div class="contenedor">
+                <div class="form">
+                    <h3>Por favor, si tiene algun un comentario o sugerencia acerca de su experiencia con la pagina indique :D</h3>
+                    <br><label>comentarios o sugerencias:</label>
+                    <textarea name="comentarios" rows="10" cols="40" placeholder="Escribe aquí tus comentarios"></textarea>
+                </div>
+            </div>
+        </section><!-- seccion de contacto y politicas -->
+        <section>
+            <div class="contenedor2">
+                <div class="form">
+                    <h3>Correo de contacto: </h3>
+                    <p>correo@gmail.com</p>
+                    <input type="radio" class="requerido" name="politicas" id="registro" required><label>Aceptar politicas de privacidad!</label><br><br>
+                    <button onclick="processData();">Enviar</button>
+                    <!-- <a href="#" class="rainbow-button" onclick="processData();" alt="Button"></a> -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+
+        window.onload = function(){
+            // document.getElementsByClassName('requerido').setAttribute('color', 'red')
+            function hoy(dia){
+                var fechaHoy = new Date();
+                var dd = fechaHoy.getDate()+dia;
+                var mm = fechaHoy.getMonth()+1; //enero es 0
+                var yyyy = fechaHoy.getFullYear();
+                if(dd<10){
+                        dd='0'+dd
+                    } 
+                    if(mm<10){
+                        mm='0'+mm
+                    }
+                return fechaHoy = yyyy+'-'+mm+'-'+dd;
+            }
+            
+            document.getElementById('fd').setAttribute("min", hoy(0));
+
+            document.getElementById('fd').addEventListener('focusout', function(){
+                let fentra = document.getElementById('fd').value;
+                console.log("entrada: "+fentra);
+                console.log("salida: "+hoy(1));
+                document.getElementById('fs').setAttribute("min", hoy(1));
+                
+            });
+        }
+
+        function processData(){
+            var nombre = document.getElementById('nombre').value;
+            var passwd = document.getElementById('passwd').value;
+            var vpasswd = document.getElementById('conpasswd').value;
+            var email = document.getElementById('email').value;
+            //var fd = document.getElementById('fd').value;
+            //var fd = $('#fd');
+            var fs = document.getElementById('fs').value;
+            var registro = document.getElementById('registro');
+            
+            if(passwd == "" || vpasswd == "" || email == "" || fd == "" || nombre == ""){
+                alert("Complete los campos por favor!");
+            }else{
+                if(!registro.checked){
+                    alert("Por favor acepte las politicas de privacidad!");
+                }else{
+                    valPasswd(passwd, vpasswd);
+                    alert("Solicitud concluida exictosamente ;D")
+                }
+            }
+        }
+        
+        function valPasswd(passwd1, passwd2){
+            //console.log(passwd1+passwd2);
+            if(passwd1 === passwd2){
+                return 1;
+            }else{
+                alert("Las contraseñas no coinciden, por favor ingrese intente otra vez!")
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
