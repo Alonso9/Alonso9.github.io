@@ -5,10 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario con estilo</title>
-    <link rel="stylesheet" href="style.css">
+    <link id="linkEstilos" rel="stylesheet" href="style.css">
 </head>
 <body>
     <main class="main" >
+        <div class="contendorBoton" align="center">
+            <button class="boton" type="button" onclick="estiloNormal()" >Estilo normal</button>
+            <button class="boton" type="button" onclick="estiloalterno()" >Estilo accesible</button>
+        </div>
         <!-- seccion de datos personales -->
         <section class="personal_info" >
             <div class="contenedor">
@@ -203,6 +207,13 @@
                 alert("Las contraseñas no coinciden, por favor ingrese intente otra vez!")
             }
 
+        }
+
+        function estiloalterno(){
+            document.getElementById('linkEstilos').href='style2.css';
+        }
+        function estiloNormal(){
+            document.getElementById('linkEstilos').href='style.css';
         }
     </script>
     

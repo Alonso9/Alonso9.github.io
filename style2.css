@@ -5,8 +5,7 @@
 }
 
 body {
-    background-color: #000000d9;
-}
+    background-color: #ffffff;}
 
 section {
     display: flex;
@@ -23,14 +22,14 @@ section {
 
 .boton {
     border: none;
-    background-color: #2b9fde;
+    background-color: #abbdeb;
     cursor: pointer;
     padding: 10px;
     font-size: 20px;
 }
 
 .contenedor {
-    background-color: #192a56;
+    background-color: #abbdeb;
     border: 1px sol #ddd;
     height: 415px;
     width: 400px;
@@ -63,7 +62,7 @@ input {
 label {
     margin-right: 8px;
     align-items: center;
-    color: #ffffff;
+    color: #100101;
 }
 
 textarea {
@@ -71,11 +70,11 @@ textarea {
 }
 
 h1, h3 {
-    color: #81ecec;
+    color: #000707;
 }
 
 p {
-    color: #ffffff;
+    color: #0a0101;
 }
 
 .politicas {
@@ -83,7 +82,7 @@ p {
 }
 
 .contenedor2 {
-    background-color: #192a56;
+    background-color: #abbdeb;
     border: 1px sol rgb(4, 0, 0);
     height: 250px;
     width: 400px;
@@ -101,5 +100,5 @@ p {
 }
 
 span {
-    color: rgb(255, 5, 5);
+    color: rgb(168, 255, 5);
 }
