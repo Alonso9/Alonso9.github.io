@@ -14,6 +14,7 @@ section {
     justify-content: center;
     width: 100vw;
     margin-top: 20px;
+    cursor: cell;
 }
 
 .contenedorBoton {
@@ -72,6 +73,7 @@ textarea {
 
 h1, h3 {
     color: #81ecec;
+    cursor: text;
 }
 
 p {
